@@ -4,6 +4,8 @@
 
 This tool helps script developers enhance their workflow by having an easy resource creation tool, along with some other random Developer goodies. 
 
+![image](https://github.com/BryceCanyonCounty/bcc-cli/assets/10902965/73be1704-1176-4cb5-b5e1-6370f21d0b69)
+
 ## Requirements
 - [Node.js](https://nodejs.org/en)
 
