@@ -23,9 +23,10 @@ module.exports = {
     let Components = setup["Project Components"];
     let Plugins = setup["Project Plugins"];
     let CreatedBy = setup["Project Created By"];
+    let KeyName = Name.replaceAll(" ", "-").toLowerCase()
 
     const directory =
-      CurrentDirectory + "/" + Name.replaceAll(" ", "-").toLowerCase();
+      CurrentDirectory + "/" + KeyName;
     let fxmanifest = file.openTemplate("fxmanifest.lua").toString()
 
     // Create/setup the required folders and content.
@@ -83,7 +84,15 @@ module.exports = {
 
 
 
-    file.copyTemplateToResource("README.md", directory+'/README.md');
+    let readme = file.openTemplate("README.md")
+    readme = readme
+        .replaceAll("{TITLE}", Name)
+        .replaceAll("{SCRIPTNAME}", KeyName)
+    
+    file.saveNewResource(directory+'/README.md', readme)
+
+
+    
     file.copyTemplateToResource("LICENSE", directory+'/LICENSE');
 
     

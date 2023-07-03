@@ -19,6 +19,5 @@ $ bcc
 
 ## TODO: 
 - Add NUI template setup (Basic vs Vite built)
-- Create better default template Readme.
 - Create/Deploy to NPM so people dont need to install this repo.
 - Potentially: Add Language option/support (Lua/JS)

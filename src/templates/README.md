@@ -1,4 +1,4 @@
-# Your Awesome Script
+# {TITLE}
 
 > A RedM script template made by BCC-CLI
 
@@ -7,8 +7,8 @@
 
 ## Installation
 1. Download this repo/codebase
-2. Extract and place `yourscript` into your `resources` folder
-3. Add `ensure yourscript` to your `server.cfg` file
+2. Extract and place `{SCRIPTNAME}` into your `resources` folder
+3. Add `ensure {SCRIPTNAME}` to your `server.cfg` file
 4. Restart your server (unless you have nightly restarts)
 
 ## How-to-use
