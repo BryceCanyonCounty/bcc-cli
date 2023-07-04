@@ -1,0 +1,17 @@
+{
+  "oxmysql": {
+    "zip": "https://github.com/overextended/oxmysql/archive/main.zip",
+    "tag": "main",
+    "directory": "/[essentials]/"
+  },
+  "weathersync": {
+    "zip": "https://github.com/kibook/weathersync/archive/master.zip",
+    "tag": "master",
+    "directory": "/[essentials]/"
+  },
+  "interiors": {
+    "zip": "https://github.com/MissBehavin/interiors/archive/master.zip",
+    "tag": "master",
+    "directory": "/[essentials]/"
+  }
+}

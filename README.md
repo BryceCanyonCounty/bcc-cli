@@ -4,7 +4,13 @@
 
 This tool helps script developers enhance their workflow by having an easy resource creation tool, along with some other random Developer goodies. 
 
+
+## Features
+1. Create new redm lua script with a simple setup
 ![image](https://github.com/BryceCanyonCounty/bcc-cli/assets/10902965/73be1704-1176-4cb5-b5e1-6370f21d0b69)
+
+2. Add/Remove resources
+
 
 ## Requirements
 - [Node.js](https://nodejs.org/en)

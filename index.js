@@ -7,6 +7,7 @@ const figlet = require('figlet');
 // Import Components to be called
 const general = require('./src/components/general');
 const project = require('./src/components/project');
+const manager = require('./src/components/manager');
 
 // Clear the terminal to have a clean slate
 clear();
@@ -25,8 +26,8 @@ const run = async () => {
         case "Script Template":
             await project.ProjectSetup()
             break;
-        case "CFX Parser":
-            console.log(chalk.green("Comming Soon..."))
+        case "Resource Manager":
+            await manager.ManagerSetup()
             break;
         default:
             break;

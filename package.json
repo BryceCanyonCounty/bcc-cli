@@ -1,7 +1,7 @@
 {
   "name": "bcc-cli",
-  "version": "1.0.0",
-  "description": "A template for node cli tools",
+  "version": "1.1.0",
+  "description": "A standalone RedM Development Command Line Instrument",
   "main": "index.js",
   "bin": {
     "bcc": "./index.js"
@@ -12,6 +12,8 @@
   "author": "AndrewR3K",
   "license": "MIT",
   "dependencies": {
+    "adm-zip": "^0.5.10",
+    "axios": "^1.4.0",
     "chalk": "^3.0.0",
     "clear": "^0.1.0",
     "clui": "^0.3.6",

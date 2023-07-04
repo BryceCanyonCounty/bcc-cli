@@ -20,6 +20,14 @@ module.exports = {
     }
   },
 
+  removeDirectory: (dir) => {
+    fs.rmSync(dir, { recursive: true, force: true });
+  },
+
+  renameDirectory: (dir, name) => {
+    fs.renameSync(dir, name)
+  },
+
   openTemplate: (template) => {
     let dir = path.resolve(__dirname, `../templates/${template}`)
 
