@@ -41,5 +41,11 @@ module.exports = {
   copyTemplateToResource(template, dir) {
     let from = path.resolve(__dirname, `../templates/${template}`)
     fs.copyFileSync(from, dir);
+  },
+
+  copyTemplateFolderToResource(template, dir) {
+    let from = path.resolve(__dirname, `../templates/${template}`)
+    
+    fs.cpSync(from, dir, {recursive: true})
   }
 };

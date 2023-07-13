@@ -1,6 +1,6 @@
 {
   "name": "bcc-cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A standalone RedM Development Command Line Instrument",
   "main": "index.js",
   "bin": {

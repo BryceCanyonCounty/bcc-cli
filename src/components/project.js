@@ -63,6 +63,10 @@ module.exports = {
         file.createFolderIfExists(directory+'/shared')
     }
 
+    if(Components.find(element => element == "nui (simple)")) {
+        file.copyTemplateFolderToResource('nui/simple', directory+'/ui')
+    }
+
 
     function GetResources(name, resourcelist) {
         let scripts = `${name}_scripts {`
