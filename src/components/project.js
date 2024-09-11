@@ -76,7 +76,7 @@ module.exports = {
         file.copyTemplateToResource("locale.lua", directory+'/shared/locale.lua')
 
         SharedScripts.push('shared/locale.lua')
-        ServerScripts.push('languages/en_lang.lua')
+        SharedScripts.push('languages/en_lang.lua')
         if(!Components.find(element => element == "shared")) {
             SharedScripts.push('shared/config.lua')
         }
