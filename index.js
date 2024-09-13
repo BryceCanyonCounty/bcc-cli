@@ -21,7 +21,7 @@ console.log(
 const run = async () => {
   try {
     let programToRun = await general.ProgramCheck();
-    
+
     switch (programToRun) {
         case "Script Template":
             await project.ProjectSetup()

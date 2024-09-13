@@ -16,6 +16,7 @@ module.exports = {
     let ServerScripts = []
     let ClientScripts = []
     let SharedScripts = []
+    let ConfigValues = []
 
     const CurrentDirectory = file.getCurrentDirectory();
     let Name = setup["Project Name"];
@@ -29,6 +30,7 @@ module.exports = {
       CurrentDirectory + "/" + KeyName;
     let fxmanifest = file.openTemplate("fxmanifest.lua").toString()
 
+
     // Create/setup the required folders and content.
     file.createFolderIfExists(directory)
 
@@ -36,10 +38,10 @@ module.exports = {
         file.createFolderIfExists(directory+'/client')
         file.createFolderIfExists(directory+'/client/plugins')
         file.copyTemplateToResource("dataview.lua", directory+'/client/plugins/dataview.lua')
-   
+
         ClientScripts.push('client/plugins/dataview.lua')
     }
-    
+
     if (Plugins.find(element => element == "oxmysql")) {
         ServerScripts.push('@oxmysql/lib/MySQL.lua')
     }
@@ -61,6 +63,26 @@ module.exports = {
 
     if(Components.find(element => element == "shared")) {
         file.createFolderIfExists(directory+'/shared')
+
+        file.copyTemplateToResource("config.lua", directory+'/shared/config.lua')
+        SharedScripts.push('shared/config.lua')
+    }
+
+    if(Components.find(element => element == "language")) {
+        let config = file.openTemplate("config.lua").toString()
+        file.createFolderIfExists(directory+'/shared')
+        file.createFolderIfExists(directory+'/languages')
+        file.copyTemplateToResource("/languages/en_lang.lua", directory+'/languages/en_lang.lua')
+        file.copyTemplateToResource("locale.lua", directory+'/shared/locale.lua')
+
+        SharedScripts.push('shared/locale.lua')
+        SharedScripts.push('languages/en_lang.lua')
+        if(!Components.find(element => element == "shared")) {
+            SharedScripts.push('shared/config.lua')
+        }
+        ConfigValues.push('Config.defaultLang = "en_lang"')
+        config = config.replaceAll("CONFIGLANG", ConfigValues)
+        file.saveNewResource(directory+'/shared/config.lua', config)
     }
 
     if(Components.find(element => element == "nui (simple)")) {
@@ -92,20 +114,20 @@ module.exports = {
     readme = readme
         .replaceAll("{TITLE}", Name)
         .replaceAll("{SCRIPTNAME}", KeyName)
-    
+
     file.saveNewResource(directory+'/README.md', readme)
 
 
-    
+
     file.copyTemplateToResource("LICENSE", directory+'/LICENSE');
 
-    
+
     fxmanifest = fxmanifest
         .replaceAll("{VERSION}", Version)
         .replaceAll("{AUTHOR}", CreatedBy)
 
     file.saveNewResource(directory+'/fxmanifest.lua', fxmanifest)
-    
+
 
     status.stop();
     console.log(chalk.green("Project Created!"), chalk.yellow(`(${directory})`));

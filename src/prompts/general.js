@@ -80,7 +80,7 @@ module.exports = {
         name: "Project Components",
         type: "checkbox",
         message: "Select what components you would like to use:",
-        choices: ["server", "client", "shared", "nui (simple)"],
+        choices: ["server", "client", "shared", "language", "nui (simple)"],
         default: ["client"],
         validate: function (value) {
             if (value.length > 0) {
